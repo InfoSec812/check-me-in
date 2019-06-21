@@ -2,7 +2,7 @@
   "name": "southwest-checkin",
   "version": "0.0.1",
   "scripts": {
-    "cli": "npm run southwest-checkin"
+    "nightwatch": "./node_modules/.bin/nightwatch"
   },
   "dependencies": {
     "chromedriver": "^75.0.0",
