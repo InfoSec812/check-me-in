@@ -1,0 +1,11 @@
+{
+  "name": "southwest-checkin",
+  "version": "0.0.1",
+  "scripts": {
+    "cli": "npm run southwest-checkin"
+  },
+  "dependencies": {
+    "chromedriver": "^75.0.0",
+    "nightwatch": "^1.1.12"
+  }
+}
