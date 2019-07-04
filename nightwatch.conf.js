@@ -1,6 +1,9 @@
 /* eslint-disable */
 
 const deepmerge = require('deepmerge');
+const chromedriver = require('chromedriver');
+
+const DRIVER_PORT = process.env.DRIVER_PORT || 9515;
 
 const userOptions = JSON.parse(process.env.NIGHTWATCH_USER_OPTIONS || '{}');
 
@@ -10,10 +13,11 @@ const baseConfig = {
 
   webdriver: {
     start_process: true,
-    server_path: 'node_modules/.bin/chromedriver',
-    port: 9515,
+    server_path: chromedriver.path,
+    port: DRIVER_PORT,
     cli_args: [
-      '--verbose'
+      '--verbose',
+      `--port=${DRIVER_PORT}`
     ],
   },
 
@@ -27,7 +31,8 @@ const baseConfig = {
         chromeOptions: {
           args: [
             '--no-sandbox',
-            '--headless'
+            '--headless',
+            '--disable-gpu'
           ],
         },
       }
